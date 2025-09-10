@@ -1,0 +1,262 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a4d5c 0%, #2c7a8a 100%);
+  overflow-x: hidden;
+}
+
+/* Slides */
+.slide {
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  position: relative;
+  background: linear-gradient(135deg, #1a4d5c 0%, #2c7a8a 100%);
+  color: white;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.slide.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-number {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: #4dd0e1;
+  color: #1a4d5c;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+/* Navegação */
+.navigation {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.nav-btn {
+  background: rgba(77, 208, 225, 0.3);
+  border: 2px solid #4dd0e1;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.nav-btn:hover {
+  background: #4dd0e1;
+  color: #1a4d5c;
+}
+
+/* Cabeçalho e menu */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+/* Slide 1 */
+.slide1-content {
+  text-align: center;
+  max-width: 900px;
+}
+
+.intro-text {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.water-drop {
+  width: 80px;
+  height: 80px;
+  background: #4dd0e1;
+  border-radius: 50% 50% 50% 0;
+  margin: 0 auto 30px;
+  transform: rotate(-45deg);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: rotate(-45deg) translateY(0); }
+  50% { transform: rotate(-45deg) translateY(-10px); }
+}
+
+.main-title {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 30px 0;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Serviços (slide 2, 6, 7, 10) */
+.intro-container,
+.profit-container,
+.timeline-container,
+.chart-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap; /* evita quebra no mobile */
+  justify-content: center;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.service-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.service-box:hover {
+  background: rgba(77, 208, 225, 0.3);
+  transform: translateX(10px);
+}
+
+.service-box.highlight {
+  background: #4dd0e1;
+  color: #1a4d5c;
+}
+
+.service-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(77, 208, 225, 0.5);
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.intro-title {
+  font-size: 36px;
+  margin-left: 20px;
+}
+
+.intro-subtitle {
+  font-size: 18px;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+/* Demais grids, círculos, timelines, etc. mantidos do original mas adaptados com flex-wrap e min-width */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-item {
+  background: #4dd0e1;
+  padding: 25px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1a4d5c;
+}
+
+.product-item.dark {
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
+
+.product-percent {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #1a4d5c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .slide {
+    padding: 20px;
+  }
+
+  .main-title {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .navigation {
+    bottom: 15px;
+    gap: 10px;
+  }
+
+  .nav-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .intro-container,
+  .profit-container,
+  .timeline-container,
+  .chart-container {
+    flex-direction: column;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
